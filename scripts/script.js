@@ -2,11 +2,26 @@
 
 $(document).ready(() => {
 
-    $(".option").change(function(){
-        x = $(this).find(':selected').attr('.option')
-        console.log(x);
+    $(".select").change( () => {
+        let userChoice = $( ".select" ).val();
+        console.log(userChoice);
         // return x;
-      });    
+    });    
+
+    switch (userChoice) {
+        case datahoarders:
+            subreddit = "S";
+            break;
+        case aww:
+            subreddit = "Sunday";
+            break;
+        case wholesomeMemes:
+            subreddit = "Sunday";
+            break;
+        case dataIsBeautiful:
+            subreddit = "Sunday";
+            break;
+    }
 
     const data = $.get("https://www.reddit.com/r/aww.json").then( (result) => {
         let newThing = result.data.children;
